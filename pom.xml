@@ -7,12 +7,34 @@
   
   <!-- 项目属性 -->
    <properties>
-   
+      <commons-lang3-version>3.3.2</commons-lang3-version>
    </properties>
    
    <!--设定仓库-->
    <repositories>
-   
+       <repository>
+            <id>oschina-repos</id>
+            <name>Oschina Releases</name>
+            <url>http://maven.oschina.net/content/groups/public</url>
+        </repository>
+
+        <repository>
+            <id>java-repos</id>
+            <name>Java Repository</name>
+            <url>http://download.java.net/maven/2/</url>
+        </repository>
+        
+         <repository>
+            <id>central-repos</id>
+            <name>Central Repository</name>
+            <url>http://repo.maven.apache.org/maven2</url>
+        </repository>
+
+        <repository>
+            <id>central-repos2</id>
+            <name>Central Repository 2</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
    
    </repositories>
    
@@ -26,6 +48,10 @@
    
    <!-- 依赖定义-->
    <dependencies>
-   
+     <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.4</version>
+     </dependency>
    </dependencies>
 </project>
