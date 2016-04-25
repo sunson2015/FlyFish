@@ -4,4 +4,28 @@
   <artifactId>FlyFish</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  
+  <!-- 项目属性 -->
+   <properties>
+   
+   </properties>
+   
+   <!--设定仓库-->
+   <repositories>
+   
+   
+   </repositories>
+   
+   
+   <!-- 插件仓库 -->
+   <pluginRepositories>
+   
+   
+   </pluginRepositories>
+   
+   
+   <!-- 依赖定义-->
+   <dependencies>
+   
+   </dependencies>
 </project>
