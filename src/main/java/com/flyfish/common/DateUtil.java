@@ -1,5 +1,11 @@
 package com.flyfish.common;
 
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.request.RequestContextListener;
+import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
 /**
  * description: 
  *<p>
@@ -10,5 +16,9 @@ package com.flyfish.common;
   * @version 1.0  
 */
 public class DateUtil {
-  
+    ContextLoaderListener  c;
+    RequestContextListener d;
+    CharacterEncodingFilter dd;
+    DispatcherServlet dsss;
+    InternalResourceViewResolver i;
 }

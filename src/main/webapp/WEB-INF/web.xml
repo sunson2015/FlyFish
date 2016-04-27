@@ -3,7 +3,60 @@
     xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     version="2.5">
     <display-name>FlyFish</display-name>
+    <context-param>
+       <param-name>contextConfigLocation</param-name>
+       <param-value>classpath*:/spring.xml</param-value>
+    </context-param>
+    
+    <!-- spring项目的入口，作用是监听容器加载的时候，自动配置ApplicationContext配置信息-->
+    <listener>
+      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!-- 每次http请求，都会生成一个新的bean,且bean仅在当前request有效 -->
+    <listener>
+      <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    
+    <!--spring 前端访问的集中控制点，其中load-on-startup是启动时加载-->
+    <servlet>
+       <servlet-name>dispatcherServlet</servlet-name>
+       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>classpath*:/spring*.xml</param-value>
+        </init-param>
+       <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>dispatcherServlet</servlet-name>
+       <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <!-- 设置spring http request,response请求编码
+    characterEncodingFilter类具有encoding和forceEncoding两个属性，其中encoding是表示设置request的编码，forceEncoding表示是否同时设置response的编码。
+     -->
+    <filter>
+      <filter-name>encoding</filter-name>
+      <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+      <init-param>
+         <param-name>encoding</param-name>
+         <param-value>UTF-8</param-value>
+      </init-param>
+      <init-param>
+         <param-name>forceEncoding</param-name>
+         <param-value>true</param-value>
+      </init-param>
+    </filter>
+    
+    <filter-mapping>
+      <filter-name>encoding</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    
+    
+    
     <welcome-file-list>
-     <welcome-file>index.jsp</welcome-file>
+     <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
