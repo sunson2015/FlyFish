@@ -1,10 +1,16 @@
 package com.flyfish.common;
 
+import org.mybatis.spring.SqlSessionFactoryBean;
+
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import tk.mybatis.spring.mapper.MapperScannerConfigurer;
+
+
 
 /**
  * description: 
@@ -21,4 +27,7 @@ public class DateUtil {
     CharacterEncodingFilter dd;
     DispatcherServlet dsss;
     InternalResourceViewResolver i;
+    
+    SqlSessionFactoryBean sl;
+    MapperScannerConfigurer mmm;
 }
