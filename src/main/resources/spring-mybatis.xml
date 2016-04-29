@@ -22,7 +22,6 @@
     <property name="password" value="${mysql.jdbc.password}" />  
     <property name="initialPoolSize" value="${mysql.jdbc.initialPoolSize}" />  
     <property name="minPoolSize" value="${mysql.jdbc.minPoolSize}" />  
-    <property name="maxPoolSize" value="${mysql.jdbc.maxPoolSiz}" />
     <property name="maxIdleTime" value="1800"/>
  </bean>
  
@@ -33,31 +32,22 @@
     <property name="password" value="${oracle.jdbc.password}" />  
     <property name="initialPoolSize" value="${oracle.jdbc.initialPoolSize}" />  
     <property name="minPoolSize" value="${oracle.jdbc.minPoolSize}" />  
-    <property name="maxPoolSize" value="${oracle.jdbc.maxPoolSiz}" /> 
     <property name="maxIdleTime" value="1800"/>
  </bean>
  
- <bean id="multipleDataSource" class="com.flyfish.common.DynamicDataSource">
-   <property name="targetDataSource">
-     <map key-type="java.lang.String">
-        <entry value-ref="mysqlDataSource" key="mysqlDataSource"></entry>
-        <entry value-ref="oracleDataSource" key="oracleDataSource"></entry>
-     </map>
-   </property>
-   <property name="defaultTargetDataSource" ref="mysqlDataSource"></property>
+ 
+ <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+   <property name="dataSource" ref="mysqlDataSource"></property>
+   <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+   <property name="mapperLocations" value="classpath*:com/flyfish/modules/**/model/mapper/*_mapper.xml"></property>
  </bean>
  
- <bean id="sqlSessionFactory" class=" org.mybatis.spring.SqlSessionFactoryBean">
-   <property name="dataSource" ref="multipleDataSource"></property>
-   <property name="basePackage" value="com.flyfish"></property>
- </bean>
- 
- <bean id="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+ <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
    <property name="basePackage" value="com.flyfish.model.**.mapper"></property>
-   <property name="sqlSessionFactory" value="sqlSessionFactory"></property>
+   <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
    <property name="properties">
-     <value>mappers=com.flyfish.common.IBasisMapper</value>
+     <value>mappers=com.flyfish.common.IBaseMapper</value>
    </property>
  </bean>
- <aop:aspectj-autoproxy/>
+
 </beans>

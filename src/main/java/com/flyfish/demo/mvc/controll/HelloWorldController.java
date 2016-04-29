@@ -1,8 +1,15 @@
 package com.flyfish.demo.mvc.controll;
 
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.flyfish.model.login.entity.UserEntity;
+import com.flyfish.model.login.mapper.UserMapper;
 
 /**
  * description: 
@@ -15,10 +22,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 */
 @Controller
 public class HelloWorldController {
+  @Autowired
+  private UserMapper userMapper;
   @RequestMapping("/test/hellomvc")
   public String helloWorld(Model model){
       System.out.println("aa");
       model.addAttribute("message","Spring 4 mvc Hello world");
+      UserEntity u=new UserEntity();
+      u.setTitle("铁道出版社");
+      u.setAuthor("liuda");
+      u.setSubmissionDate(new Date());
+      this.userMapper.insert(u);
       return "hellomvc";
   }
 }

@@ -1,5 +1,8 @@
 package com.flyfish.model.login.mapper;
 
+import com.flyfish.common.IBaseMapper;
+import com.flyfish.model.login.entity.UserEntity;
+
 /**
  * description: 
  *<p>
@@ -9,6 +12,6 @@ package com.flyfish.model.login.mapper;
  *</p>
   * @version 1.0  
 */
-public interface UserMapper {
+public interface UserMapper extends  IBaseMapper<UserEntity>{
 
 }
