@@ -29,10 +29,11 @@ public class HelloWorldController {
       System.out.println("aa");
       model.addAttribute("message","Spring 4 mvc Hello world");
       UserEntity u=new UserEntity();
-      u.setTitle("铁道出版社");
+      u.setTitle("beijingchuban");
       u.setAuthor("liuda");
       u.setSubmissionDate(new Date());
       this.userMapper.insert(u);
+      System.out.println(u.toString());
       return "hellomvc";
   }
 }
