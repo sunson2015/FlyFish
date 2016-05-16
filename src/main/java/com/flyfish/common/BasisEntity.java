@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * description: 
  *<p>
- * @author  hongpingliu@creditease.cn
+ * @author 
  *<p>
  * create date：2016年4月27日 下午6:57:34 
  *</p>

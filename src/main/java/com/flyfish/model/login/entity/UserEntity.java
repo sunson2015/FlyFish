@@ -10,7 +10,7 @@ import com.flyfish.common.BasisEntity;
 /**
  * description: 
  *<p>
- * @author  hongpingliu@creditease.cn
+ * @author 
  *<p>
  * create date：2016年4月28日 上午9:31:11 
  *</p>

@@ -5,7 +5,7 @@ import tk.mybatis.mapper.common.Mapper;
 /**
  * description: 
  *<p>
- * @author  hongpingliu@creditease.cn
+ * @author
  *<p>
  * create date：2016年4月28日 上午9:23:47 
  *</p>

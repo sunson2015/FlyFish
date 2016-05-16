@@ -6,7 +6,7 @@ import com.flyfish.model.login.entity.UserEntity;
 /**
  * description: 
  *<p>
- * @author  hongpingliu@creditease.cn
+ * @author  
  *<p>
  * create date：2016年4月28日 上午9:30:15 
  *</p>

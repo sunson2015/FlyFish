@@ -14,7 +14,7 @@ import com.flyfish.model.login.mapper.UserMapper;
 /**
  * description: 
  *<p>
- * @author  hongpingliu@creditease.cn
+ * @author  
  *<p>
  * create date：2016年4月27日 上午10:04:59 
  *</p>
