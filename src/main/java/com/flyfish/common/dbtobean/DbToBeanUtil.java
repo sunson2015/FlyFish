@@ -13,7 +13,7 @@ import java.sql.SQLException;
 /**
  * description: 
  *<p>
- * @author  hongpingliu@creditease.cn
+ * @author  
  *<p>
  * create date：2016年4月28日 上午10:05:08 
  *</p>

@@ -3,7 +3,7 @@ package com.flyfish.common;
 /**
  * description: 
  *<p>
- * @author  hongpingliu@creditease.cn
+ * @author
  *<p>
  * create date：2016年5月16日 上午11:23:54 
  *</p>
