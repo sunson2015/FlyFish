@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+ 
+ <property name="LOG_HOME" value="D:" />
+ 
+ <!-- 控制台输出 -->    
+ <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+  <encoder>
+   <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-4relative [%thread] %-5level %logger{36} @%msg%n</pattern>
+  </encoder>
+ </appender>
+ 
+ <!-- 将Controller按照每天生成日志文件 --> 
+ <appender name="logcontroller" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <!-- 日志输出编码 -->  
+       <Encoding>UTF-8</Encoding>
+       <File>${LOG_HOME}/controller/xuanyuan-controller.log</File>
+  <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+   <!--日志文件输出的文件名-->
+   <FileNamePattern>${LOG_HOME}/controller/xuanyuan-controller.%d{yyyy-MM-dd}.log</FileNamePattern>
+   <!-- 存活时间（天）  -->
+   <MaxHistory>365</MaxHistory>
+  </rollingPolicy>
+  <encoder>
+   <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+        <pattern>%date %-4relative [%thread] %-5level %logger{36} [%file : %line] @%msg%n</pattern>  
+     </encoder>
+ </appender>
+ 
+
+ 
+ <root level="INFO">  
+        <appender-ref ref="stdout" />  
+    </root>
+</configuration>

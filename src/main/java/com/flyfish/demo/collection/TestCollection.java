@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import ch.qos.logback.ext.spring.web.LogbackConfigListener;
+
 /**
  * description: 
  *<p>
@@ -48,6 +50,7 @@ public class TestCollection {
         });
         System.out.println("list1 size:"+list1.size());
         System.out.println("list2 size:"+list2.size());
+        LogbackConfigListener l;
      
     }
 }
