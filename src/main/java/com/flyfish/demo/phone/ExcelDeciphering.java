@@ -19,10 +19,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * Description: Excel文件解密
  * </p>
  * 
- * @author SuiGaopeng
- * @version 1.0 
- * Create Date: 2014-11-25 上午9:15:41 
- * Project Name: my-test
+
  * 
  * <pre>
  * Modification History: 
@@ -55,7 +52,7 @@ public class ExcelDeciphering {
 	 * 读取加密后的Excel数据生成解密后的Excel文件
 	 * </p>
 	 * 
-	 * @author SuiGaopeng
+	 * @author
 	 * @date 2014-11-25 上午9:17:01
 	 * @return
 	 */

@@ -16,10 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  * <p>
  * Description: Excel文件加密
- * </p>
- * @author SuiGaopeng
- * @version 1.0
- * Create Date: 2014-11-24 下午8:09:40
+
  * Project Name: my-test
  *
  * <pre>
@@ -51,7 +48,7 @@ public class ExcelEncrypt {
 	 * <p>
 	 * 读取源文件,生成加密Excel文件
 	 * </p>
-	 * @author SuiGaopeng
+	 * @author
 	 * @date 2014-11-24 下午8:10:12
 	 * @return
 	 */
