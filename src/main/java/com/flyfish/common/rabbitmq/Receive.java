@@ -22,14 +22,18 @@ import com.rabbitmq.client.ShutdownSignalException;
 public class Receive {
  public static void main(String[] args) throws IOException, TimeoutException, ShutdownSignalException, ConsumerCancelledException, InterruptedException {
      String queueName="hello";
-     Connection con=new ConnectionFactory().newConnection();
+     Connection con=RabbitMqConncetion.getConnection();
      Channel channel=con.createChannel();
      channel.queueDeclare(queueName, false, false, false, null);
      QueueingConsumer consumer=new QueueingConsumer(channel);
      channel.basicConsume(queueName, true,consumer);
+    
      while(true){
          QueueingConsumer.Delivery deliver=consumer.nextDelivery();
          System.out.println(new String(deliver.getBody()));
+        
      }
+     
+     
 }
 }

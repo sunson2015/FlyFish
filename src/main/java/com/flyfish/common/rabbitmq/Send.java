@@ -19,9 +19,14 @@ import com.rabbitmq.client.ConnectionFactory;
 public class Send {
  public static void main(String[] args) throws IOException, TimeoutException {
     String queueName="hello";
-    Connection con=new ConnectionFactory().newConnection();
+   
+    Connection con=RabbitMqConncetion.getConnection();
+
     Channel channel=con.createChannel();
     channel.queueDeclare(queueName, false, false, false, null);
-    channel.basicPublish("", queueName, null,"Hello World 我学rabitmq".getBytes());
+    channel.basicPublish("", queueName, null,"Hello World 我学rabitmq AA".getBytes());
+    channel.close();
+    con.close();
+    System.out.println("end");
 }
 }
