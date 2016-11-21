@@ -292,6 +292,13 @@
     <version>3.6.5</version>
    </dependency>
    
+ <dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongo-java-driver</artifactId>
+    <version>3.2.1</version>
+</dependency>
+   
+   
  </dependencies>
  
  <build>
