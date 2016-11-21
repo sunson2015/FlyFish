@@ -26,7 +26,7 @@ public class Consumer {
     Connection con=RabbitMqConncetion.getConnection();
     Channel channel =con.createChannel();
     String queueName=QUEUE_NAME;
-    Producer.XT xt=Producer.XT.FANOUT;
+    Producer.XT xt=Producer.XT.TOPIC;
     switch(xt){
         case DEFAULT:
             channel.queueDeclare(queueName, true, false, true, null);
